@@ -555,10 +555,10 @@ const Form = () => {
     setAddNote({ ...note });
   };
 
-  useEffect(() => {
-    const timer = setInterval(() => setLiveTime(new Date()), 1000);
-    return () => clearInterval(timer);
-  }, []);
+  // useEffect(() => {
+  //   const timer = setInterval(() => setLiveTime(new Date()), 1000);
+  //   return () => clearInterval(timer);
+  // }, []);
 
   
   return (
@@ -600,9 +600,9 @@ const Form = () => {
           <Button style={{ width: '30px', borderRadius: '30px', backgroundColor: '#c7defa', margin: "2px" }} onClick={handleRefresh}>
             <RefreshIcon />
           </Button>
-          <p style={{ width: '100px', borderRadius: '30px', backgroundColor: '#c7defa', margin: "2px", padding: '8px', textAlign: 'center' }}>
+          {/* <p style={{ width: '100px', borderRadius: '30px', backgroundColor: '#c7defa', margin: "2px", padding: '8px', textAlign: 'center' }}>
             {liveTime.toLocaleTimeString()}
-          </p>
+          </p> */}
         </Box>
       </Container>
     </ClickAwayListener>

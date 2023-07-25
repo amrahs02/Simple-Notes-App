@@ -25,6 +25,7 @@ const EmptyNotes = () => {
         <Container>
             <Light />
             <Text>Notes you add appear here</Text>
+            <Text style={{bottom: '0px', position: 'relative', fontSize: '10px'}}>The more you know the more you realise how little you know</Text>
         </Container>
     )
 }
