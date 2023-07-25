@@ -1,5 +1,4 @@
 import { useContext } from 'react';
-
 import { Card, CardContent, CardActions, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { RestoreFromTrashOutlined as Restore, DeleteForeverOutlined as Delete } from '@mui/icons-material';
@@ -15,8 +14,7 @@ const StyledCard = styled(Card)`
 
 const DeleteNote = ({ deleteNote }) => {
 
-    const { deleteNotes, setNotes, setArchiveNotes, setDeleteNotes } = useContext(DataContext);
-
+    const { deleteNotes, setNotes, setDeleteNotes } = useContext(DataContext);
     const restoreNote = (deleteNote) => {
         const updatedNotes = deleteNotes.filter(data => data.id !== deleteNote.id);
         setDeleteNotes(updatedNotes);
