@@ -4,6 +4,7 @@ import { Menu } from '@mui/icons-material';
 import { styled } from '@mui/material/styles';
 import { useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import Box from '@mui/material/Box';
 
 const Header = styled(AppBar)`
   z-index: 1201;
@@ -54,9 +55,12 @@ const HeaderBar = ({ open, handleDrawer }) => {
         </IconButton>
         <img src={logo} alt="logo" style={{width: 30}} />
         <Heading>{HeadText}</Heading>
-          <p style={{ position: 'absolute', color:'black', right:'0', width: '100px', borderRadius: '30px', backgroundColor: '#F5F5DC', margin: "2px", padding: '8px', textAlign: 'center' }}>
-            {liveTime.toLocaleTimeString()}
-          </p>
+          <Box style={{ width:'180px', display:'flex',justifyContent:'center', alignItems:'center', position: 'absolute', color:'black', right:'0',top:'0', borderRadius: '20px', backgroundColor: '#F5F5DC', margin: "10px", textAlign: 'center' }}>
+            <img src="/profile-pic_3.png" alt="profile" style={{ width:'30px', color:'black', borderRadius: '30px', backgroundColor: '#F5F5DC', margin: "10px", textAlign: 'center' }} />
+            <p style={{color:'black', width: '100px', borderRadius: '30px', backgroundColor: '#F5F5DC', margin: "10px", textAlign: 'center' }}>
+              {liveTime.toLocaleTimeString()}
+            </p>
+          </Box>
       </Toolbar>
     </Header>
   )
