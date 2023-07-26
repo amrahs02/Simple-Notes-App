@@ -3,6 +3,7 @@ import { AppBar, Toolbar, Typography, IconButton } from '@mui/material';
 import { Menu } from '@mui/icons-material';
 import { styled } from '@mui/material/styles';
 import { useLocation } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 const Header = styled(AppBar)`
   z-index: 1201;
@@ -33,7 +34,12 @@ const HeaderBar = ({ open, handleDrawer }) => {
     HeadText = 'Trash';
   }
 
+  const [liveTime, setLiveTime] = useState(new Date());
 
+  useEffect(() => {
+    const timer = setInterval(() => setLiveTime(new Date()), 1000);
+    return () => clearInterval(timer);
+  }, []);
 
 
   return (
@@ -48,6 +54,9 @@ const HeaderBar = ({ open, handleDrawer }) => {
         </IconButton>
         <img src={logo} alt="logo" style={{width: 30}} />
         <Heading>{HeadText}</Heading>
+          <p style={{ position: 'absolute', color:'black', right:'0', width: '100px', borderRadius: '30px', backgroundColor: '#c7defa', margin: "2px", padding: '8px', textAlign: 'center' }}>
+            {liveTime.toLocaleTimeString()}
+          </p>
       </Toolbar>
     </Header>
   )

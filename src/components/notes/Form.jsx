@@ -469,7 +469,7 @@
 // export default Form;
 
 
-import { useState, useEffect, useRef, useContext } from 'react';
+import { useState, useRef, useContext } from 'react';
 import { Box, TextField, ClickAwayListener, Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { v4 as uuid } from 'uuid';
@@ -504,7 +504,7 @@ const Form = () => {
   const { setNotes } = useContext(DataContext);
   const containerRef = useRef();
 
-  const [liveTime, setLiveTime] = useState(new Date());
+  // const [liveTime, setLiveTime] = useState(new Date());
 
   const handleClickAway = () => {
     setShowTextField(false);
