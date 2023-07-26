@@ -30,7 +30,7 @@ const HeaderBar = ({ open, handleDrawer }) => {
   } else if (pathname === '/note') {
     HeadText = 'Keep';
   } else if (pathname === '/delete') {
-    HeadText = 'Delete';
+    HeadText = 'Trash';
   }
 
 
