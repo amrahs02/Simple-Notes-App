@@ -22,7 +22,8 @@ git clone https://github.com/your-username/google-keep-clone.git
 
 2. Install dependencies:
 
-cd google-keep-clone
+cd google-keep-clone \\
+
 npm install
 
 3. Run the development server:
