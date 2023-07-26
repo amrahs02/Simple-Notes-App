@@ -54,7 +54,7 @@ const HeaderBar = ({ open, handleDrawer }) => {
         </IconButton>
         <img src={logo} alt="logo" style={{width: 30}} />
         <Heading>{HeadText}</Heading>
-          <p style={{ position: 'absolute', color:'black', right:'0', width: '100px', borderRadius: '30px', backgroundColor: '#c7defa', margin: "2px", padding: '8px', textAlign: 'center' }}>
+          <p style={{ position: 'absolute', color:'black', right:'0', width: '100px', borderRadius: '30px', backgroundColor: '#F5F5DC', margin: "2px", padding: '8px', textAlign: 'center' }}>
             {liveTime.toLocaleTimeString()}
           </p>
       </Toolbar>

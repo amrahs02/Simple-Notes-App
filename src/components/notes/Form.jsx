@@ -588,19 +588,19 @@ const Form = () => {
         />
 
         <Box>
-          <Button style={{ width: '30px', borderRadius: '30px', backgroundColor: '#c7defa', margin: "2px" }} onClick={handleUndo}>
+          <Button style={{ width: '30px', borderRadius: '30px', color:'grey', backgroundColor: '#F5F5DC', margin: "2px" }} onClick={handleUndo}>
             <UndoIcon /> 
           </Button>
-          <Button style={{ width: '30px', borderRadius: '30px', backgroundColor: '#c7defa', margin: "2px" }} onClick={handleRedo}>
+          <Button style={{ width: '30px', borderRadius: '30px', color:'grey', backgroundColor: '#F5F5DC', margin: "2px" }} onClick={handleRedo}>
             <RedoIcon />
           </Button>
-          <Button style={{ width: '30px', borderRadius: '30px', backgroundColor: '#c7defa', margin: "2px" }} onClick={handleDelete}>
+          <Button style={{ width: '30px', borderRadius: '30px', color:'grey', backgroundColor: '#F5F5DC', margin: "2px" }} onClick={handleDelete}>
             <DeleteIcon />
           </Button>
-          <Button style={{ width: '30px', borderRadius: '30px', backgroundColor: '#c7defa', margin: "2px" }} onClick={handleRefresh}>
+          <Button style={{ width: '30px', borderRadius: '30px', color:'grey', backgroundColor: '#F5F5DC', margin: "2px" }} onClick={handleRefresh}>
             <RefreshIcon />
           </Button>
-          {/* <p style={{ width: '100px', borderRadius: '30px', backgroundColor: '#c7defa', margin: "2px", padding: '8px', textAlign: 'center' }}>
+          {/* <p style={{ width: '100px', borderRadius: '30px', color:'grey', backgroundColor: '#c7defa', margin: "2px", padding: '8px', textAlign: 'center' }}>
             {liveTime.toLocaleTimeString()}
           </p> */}
         </Box>
