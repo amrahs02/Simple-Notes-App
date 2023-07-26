@@ -42,4 +42,4 @@ Contributions are welcome! If you find a bug or have a feature request, please o
 
 
 
-Created with ❤️ by [Your Name](https://github.com/amrahs02).
+Created with ❤️ by [Sandeep Kumar Sharma](https://github.com/amrahs02).
