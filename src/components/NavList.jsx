@@ -112,7 +112,7 @@ const NavList = () => {
                     // Add :hover rule to change background color on hover
                     sx={{
                         '&:hover': {
-                            backgroundColor: '#8B4513', // Set your desired hover background color here
+                            backgroundColor: '#F5F5DC', // Set your desired hover background color here
                         },
                     }}
                 >
