@@ -519,6 +519,24 @@ const Form = () => {
     }
   };
 
+  const handleSave = () => {
+    setShowTextField(false);
+    containerRef.current.style.minHeight = "30px";
+    setAddNote({ ...note, id: uuid() });
+
+    if (addNote.heading || addNote.text) {
+      setHistory(history.slice(0, historyPointer + 1));
+      setHistoryPointer(historyPointer + 1);
+      setHistory((prevHistory) => [...prevHistory, addNote]);
+      setNotes((prevArr) => [addNote, ...prevArr]);
+    }
+  };
+  const handleCancel = () => {
+    setShowTextField(false);
+    containerRef.current.style.minHeight = "30px";
+    setAddNote({ ...note, id: uuid() });
+  };
+
   const onTextAreaClick = () => {
     setShowTextField(true);
     containerRef.current.style.minHeight = "70px";
@@ -583,21 +601,46 @@ const Form = () => {
           name="text"
           value={addNote.text}
         />
-
-        <Box>
-          <Button style={style1} onClick={handleUndo}>
-            <UndoIcon />
-          </Button>
-          <Button style={style1} onClick={handleRedo}>
-            <RedoIcon />
-          </Button>
-          <Button style={style1} onClick={handleDelete}>
-            <DeleteIcon />
-          </Button>
-          <Button style={style1} onClick={handleRefresh}>
-            <RefreshIcon />
-          </Button>
-        </Box>
+        {showTextField && (
+          <Box>
+            <Button style={style1} onClick={handleUndo}>
+              <UndoIcon />
+            </Button>
+            <Button style={style1} onClick={handleRedo}>
+              <RedoIcon />
+            </Button>
+            <Button style={style1} onClick={handleDelete}>
+              <DeleteIcon />
+            </Button>
+            <Button style={style1} onClick={handleRefresh}>
+              <RefreshIcon />
+            </Button>
+            <Button
+              style={{
+                width: "30px",
+                borderRadius: "10px",
+                color: "white",
+                backgroundColor: "#5cb85c",
+                margin: "2px",
+              }}
+              onClick={handleSave}
+            >
+              Save
+            </Button>
+            <Button
+              style={{
+                width: "30px",
+                borderRadius: "10px",
+                color: "white",
+                backgroundColor: "#DC3545",
+                margin: "2px",
+              }}
+              onClick={handleCancel}
+            >
+              Close
+            </Button>
+          </Box>
+        )}
       </Container>
     </ClickAwayListener>
   );
