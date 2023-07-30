@@ -1,93 +1,88 @@
-// // // import { useState, useRef, useContext } from 'react';
+// import { useState, useRef, useContext } from "react";
 
-// // // import { Box, TextField, ClickAwayListener } from '@mui/material';
-// // // import { styled } from '@mui/material/styles';
-// // // import { v4 as uuid } from 'uuid';
+// import { Box, TextField, ClickAwayListener } from "@mui/material";
+// import { styled } from "@mui/material/styles";
+// import { v4 as uuid } from "uuid";
 
-// // // import { DataContext } from '../../context/DataProvider';
+// import { DataContext } from "../../context/DataProvider";
 
-// // // const Container = styled(Box)`
-// // //     display: flex;
-// // //     flex-direction: column;
-// // //     margin: auto;
-// // //     box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 15%);
-// // //     border-color: #e0e0e0;
-// // //     width: 600px;
-// // //     border-radius: 8px;
-// // //     min-height: 30px;
-// // //     padding: 10px 15px;
-// // // `
+// const Container = styled(Box)`
+//   display: flex;
+//   flex-direction: column;
+//   margin: auto;
+//   box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 15%);
+//   border-color: #e0e0e0;
+//   width: 600px;
+//   border-radius: 8px;
+//   min-height: 30px;
+//   padding: 10px 15px;
+// `;
 
-// // // const note = {
-// // //     id: '',
-// // //     heading: '',
-// // //     text: ''
-// // // }
+// const note = {
+//   id: "",
+//   heading: "",
+//   text: "",
+// };
 
-// // // const Form = () => {
+// const Form = () => {
+//   const [showTextField, setShowTextField] = useState(false);
+//   const [addNote, setAddNote] = useState({ ...note, id: uuid() });
 
-// // //     const [showTextField, setShowTextField] = useState(false);
-// // //     const [addNote, setAddNote] = useState({ ...note, id: uuid() });
+//   const { setNotes } = useContext(DataContext);
 
-// // //     const { setNotes } = useContext(DataContext);
-    
-// // //     const containerRef = useRef();
+//   const containerRef = useRef();
 
-// // //     const handleClickAway = () => {
-// // //         setShowTextField(false);
-// // //         containerRef.current.style.minheight = '30px'
-// // //         setAddNote({ ...note, id: uuid() });
+//   const handleClickAway = () => {
+//     setShowTextField(false);
+//     containerRef.current.style.minHeight = "30px";
+//     setAddNote({ ...note, id: uuid() });
 
-// // //         if (addNote.heading || addNote.text) {
-// // //             setNotes(prevArr => [addNote, ...prevArr])
-// // //         }
-// // //     }
-    
-// // //     const onTextAreaClick = () => {
-// // //         setShowTextField(false);
-// // //         containerRef.current.style.minheight = '70px'
-// // //     }
+//     if (addNote.heading || addNote.text) {
+//       setNotes((prevArr) => [addNote, ...prevArr]);
+//     }
+//   };
 
-// // //     const onTextChange = (e) => {
-// // //         let changedNote = { ...addNote, [e.target.name]: e.target.value };
-// // //         setAddNote(changedNote);
-// // //     }
+//   const onTextAreaClick = () => {
+//     setShowTextField(true);
+//     containerRef.current.style.minHeight = "70px";
+//   };
 
-// // //     return (
-// // //         <ClickAwayListener onClickAway={handleClickAway}>
-// // //             <Container ref={containerRef}>
-// // //                 {   showTextField && 
-// // //                     <TextField 
-// // //                         placeholder="Title"
-// // //                         variant="standard"
-// // //                         InputProps={{ disableUnderline: true }}
-// // //                         style={{ marginBottom: 10 }}
-// // //                         onChange={(e) => onTextChange(e)}
-// // //                         name='heading'
-// // //                         value={addNote.heading}
-// // //                     />
-// // //                 }
-// // //                 <TextField
-// // //                     placeholder="Take a note..."
-// // //                     multiline
-// // //                     maxRows={Infinity}
-// // //                     variant="standard"
-// // //                     InputProps={{ disableUnderline: true }}
-// // //                     onClick={onTextAreaClick}
-// // //                     onChange={(e) => onTextChange(e)}
-// // //                     name='text'
-// // //                     value={addNote.text}
-// // //                 />
-// // //             </Container>
-// // //         </ClickAwayListener>
-// // //     )
-// // // }
+//   const onTextChange = (e) => {
+//     let changedNote = { ...addNote, [e.target.name]: e.target.value };
+//     setAddNote(changedNote);
+//   };
 
-// // // export default Form;
+//   return (
+//     <ClickAwayListener onClickAway={handleClickAway}>
+//       <Container ref={containerRef}>
+//         {showTextField && (
+//           <TextField
+//             placeholder="Title"
+//             variant="standard"
+//             InputProps={{ disableUnderline: true }}
+//             style={{ marginBottom: 10 }}
+//             onChange={(e) => onTextChange(e)}
+//             name="heading"
+//             value={addNote.heading}
+//           />
+//         )}
+//         <TextField
+//           placeholder="Take a note..."
+//           multiline
+//           maxRows={Infinity}
+//           variant="standard"
+//           InputProps={{ disableUnderline: true }}
+//           onClick={onTextAreaClick}
+//           onChange={(e) => onTextChange(e)}
+//           name="text"
+//           value={addNote.text}
+//         />
+//       </Container>
+//     </ClickAwayListener>
+//   );
+// };
 
-
-
-
+// export default Form;
 
 // // // import { useState, useRef, useContext } from 'react';
 // // // import {UndoIcon, Box, TextField, ClickAwayListener, Button } from '@mui/material';
@@ -202,8 +197,6 @@
 // // // };
 
 // // // export default Form;
-
-
 
 // // import { useState, useRef, useContext } from 'react';
 
@@ -331,8 +324,6 @@
 // // };
 
 // // export default Form;
-
-
 
 // import { useState, useEffect, useRef, useContext } from 'react';
 
@@ -468,14 +459,25 @@
 
 // export default Form;
 
+import { useState, useRef, useContext } from "react";
+import { Box, TextField, ClickAwayListener, Button } from "@mui/material";
+import { styled } from "@mui/material/styles";
+import { v4 as uuid } from "uuid";
+import { DataContext } from "../../context/DataProvider";
+import {
+  Undo as UndoIcon,
+  Redo as RedoIcon,
+  Delete as DeleteIcon,
+  Refresh as RefreshIcon,
+} from "@mui/icons-material";
 
-import { useState, useRef, useContext } from 'react';
-import { Box, TextField, ClickAwayListener, Button } from '@mui/material';
-import { styled } from '@mui/material/styles';
-import { v4 as uuid } from 'uuid';
-import { DataContext } from '../../context/DataProvider';
-import { Undo as UndoIcon, Redo as RedoIcon, Delete as DeleteIcon, Refresh as RefreshIcon } from '@mui/icons-material';
-
+const style1 = {
+  width: "30px",
+  borderRadius: "10px",
+  color: "grey",
+  backgroundColor: "#F5F5DC",
+  margin: "2px",
+};
 const Container = styled(Box)`
   display: flex;
   flex-direction: column;
@@ -489,9 +491,9 @@ const Container = styled(Box)`
 `;
 
 const note = {
-  id: '',
-  heading: '',
-  text: ''
+  id: "",
+  heading: "",
+  text: "",
 };
 
 const Form = () => {
@@ -504,29 +506,31 @@ const Form = () => {
   const { setNotes } = useContext(DataContext);
   const containerRef = useRef();
 
-
   const handleClickAway = () => {
     setShowTextField(false);
-    containerRef.current.style.minheight = '30px';
+    containerRef.current.style.minHeight = "30px";
     setAddNote({ ...note, id: uuid() });
 
     if (addNote.heading || addNote.text) {
       setHistory(history.slice(0, historyPointer + 1));
       setHistoryPointer(historyPointer + 1);
-      setHistory(prevHistory => [...prevHistory, addNote]);
-      setNotes(prevArr => [addNote, ...prevArr]);
+      setHistory((prevHistory) => [...prevHistory, addNote]);
+      setNotes((prevArr) => [addNote, ...prevArr]);
     }
   };
 
   const onTextAreaClick = () => {
-    setShowTextField(false);
-    containerRef.current.style.minheight = '70px';
+    setShowTextField(true);
+    containerRef.current.style.minHeight = "70px";
   };
 
   const onTextChange = (e) => {
     let changedNote = { ...addNote, [e.target.name]: e.target.value };
     setAddNote(changedNote);
-    setHistory(prevHistory => [...prevHistory.slice(0, historyPointer + 1), changedNote]);
+    setHistory((prevHistory) => [
+      ...prevHistory.slice(0, historyPointer + 1),
+      changedNote,
+    ]);
     setHistoryPointer(historyPointer + 1);
   };
 
@@ -554,8 +558,6 @@ const Form = () => {
     setAddNote({ ...note });
   };
 
-
-  
   return (
     <ClickAwayListener onClickAway={handleClickAway}>
       <Container ref={containerRef}>
@@ -583,16 +585,16 @@ const Form = () => {
         />
 
         <Box>
-          <Button style={{ width: '30px', borderRadius: '30px', color:'grey', backgroundColor: '#F5F5DC', margin: "2px" }} onClick={handleUndo}>
-            <UndoIcon /> 
+          <Button style={style1} onClick={handleUndo}>
+            <UndoIcon />
           </Button>
-          <Button style={{ width: '30px', borderRadius: '30px', color:'grey', backgroundColor: '#F5F5DC', margin: "2px" }} onClick={handleRedo}>
+          <Button style={style1} onClick={handleRedo}>
             <RedoIcon />
           </Button>
-          <Button style={{ width: '30px', borderRadius: '30px', color:'grey', backgroundColor: '#F5F5DC', margin: "2px" }} onClick={handleDelete}>
+          <Button style={style1} onClick={handleDelete}>
             <DeleteIcon />
           </Button>
-          <Button style={{ width: '30px', borderRadius: '30px', color:'grey', backgroundColor: '#F5F5DC', margin: "2px" }} onClick={handleRefresh}>
+          <Button style={style1} onClick={handleRefresh}>
             <RefreshIcon />
           </Button>
         </Box>
