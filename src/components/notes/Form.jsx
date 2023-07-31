@@ -476,7 +476,7 @@ const style1 = {
   borderRadius: "10px",
   color: "grey",
   backgroundColor: "#F5F5DC",
-  margin: "2px",
+  margin: "5px",
 };
 const Container = styled(Box)`
   display: flex;
@@ -484,7 +484,7 @@ const Container = styled(Box)`
   margin: auto;
   box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 15%);
   border-color: #e0e0e0;
-  width: 600px;
+  width: 50%;
   border-radius: 8px;
   min-height: 30px;
   padding: 10px 15px;
@@ -621,7 +621,7 @@ const Form = () => {
                 borderRadius: "10px",
                 color: "white",
                 backgroundColor: "#5cb85c",
-                margin: "2px",
+                margin: "5px",
               }}
               onClick={handleSave}
             >
@@ -633,7 +633,7 @@ const Form = () => {
                 borderRadius: "10px",
                 color: "white",
                 backgroundColor: "#DC3545",
-                margin: "2px",
+                margin: "5px",
               }}
               onClick={handleCancel}
             >

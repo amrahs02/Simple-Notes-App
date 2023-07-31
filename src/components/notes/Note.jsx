@@ -167,6 +167,51 @@ const Note = ({ note }) => {
             margin: 4,
           }}
         />
+        <Button
+          onClick={() => handleColorSelect("#4caf50")}
+          style={{
+            backgroundColor: "#4caf50",
+            width: 32,
+            height: 32,
+            margin: 4,
+          }}
+        />
+        <Button
+          onClick={() => handleColorSelect("#4caf50")}
+          style={{
+            backgroundColor: "#4caf50",
+            width: 32,
+            height: 32,
+            margin: 4,
+          }}
+        />
+        <Button
+          onClick={() => handleColorSelect("#4caf50")}
+          style={{
+            backgroundColor: "#4caf50",
+            width: 32,
+            height: 32,
+            margin: 4,
+          }}
+        />
+        <Button
+          onClick={() => handleColorSelect("#4caf50")}
+          style={{
+            backgroundColor: "#4caf50",
+            width: 32,
+            height: 32,
+            margin: 4,
+          }}
+        />
+        <Button
+          onClick={() => handleColorSelect("#4caf50")}
+          style={{
+            backgroundColor: "#4caf50",
+            width: 32,
+            height: 32,
+            margin: 4,
+          }}
+        />
         {/* Add more color buttons here */}
       </Popover>
     </>
