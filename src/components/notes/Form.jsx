@@ -471,13 +471,29 @@ import {
   Refresh as RefreshIcon,
 } from "@mui/icons-material";
 
+// const style1 = {
+//   width: "30px",
+//   borderRadius: "10px",
+//   color: "grey",
+//   backgroundColor: "#F5F5DC",
+//   margin: "2px",
+// };
 const style1 = {
   width: "30px",
   borderRadius: "10px",
   color: "grey",
   backgroundColor: "#F5F5DC",
-  margin: "5px",
+  margin: "2px",
 };
+
+// Add a media query to change width to 10px when in mobile view
+if (window.matchMedia("(max-width: 768px)").matches) {
+  style1.backgroundColor = "#F5F5DC";
+  style1.color = "grey";
+  style1.borderRadius = "100px";
+  style1.margin = "8px";
+}
+
 const Container = styled(Box)`
   display: flex;
   flex-direction: column;
@@ -488,6 +504,10 @@ const Container = styled(Box)`
   border-radius: 8px;
   min-height: 30px;
   padding: 10px 15px;
+
+  @media (max-width: 768px) {
+    width: 90%;
+  }
 `;
 
 const note = {
@@ -615,28 +635,10 @@ const Form = () => {
             <Button style={style1} onClick={handleRefresh}>
               <RefreshIcon />
             </Button>
-            <Button
-              style={{
-                width: "30px",
-                borderRadius: "10px",
-                color: "white",
-                backgroundColor: "#5cb85c",
-                margin: "5px",
-              }}
-              onClick={handleSave}
-            >
+            <Button style={style1} onClick={handleSave}>
               Save
             </Button>
-            <Button
-              style={{
-                width: "30px",
-                borderRadius: "10px",
-                color: "white",
-                backgroundColor: "#DC3545",
-                margin: "5px",
-              }}
-              onClick={handleCancel}
-            >
+            <Button style={style1} onClick={handleCancel}>
               Close
             </Button>
           </Box>
