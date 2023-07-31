@@ -31,7 +31,7 @@ const EmptyNotes = () => {
           top: "20px",
         }}
       >
-        The more you know, the more you realise how little you know
+        The more you know, the more you realize how little you know
       </Text>
     </Container>
   );
