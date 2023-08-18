@@ -41,4 +41,4 @@ Contributions are welcome! If you find a bug or have a feature request, please o
 
 
 
-Created with ❤️ by [Sandeep Kumar Sharma](https://github.com/amrahs02).
+Created and Designed by [Sandeep Kumar Sharma](https://github.com/amrahs02).
