@@ -17,14 +17,13 @@ Check out the live demo [here](https://google-keep-clone-gules.vercel.app/).
 
 ## Getting Started
 
-Clone the repository: \
+Clone the repository:
 git clone https://github.com/your-username/google-keep-clone.git
 
 Install dependencies:
-cd google-keep-clone \
-npm install
-
-3. Run the development server:\
+1. cd google-keep-clone 
+2. npm install
+3. Run the development server:
 4. http://localhost:3000
 
 
