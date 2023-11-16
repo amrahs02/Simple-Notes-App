@@ -1,0 +1,55 @@
+/* Add this CSS to your stylesheets */
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .instructions,
+  .features,
+  .navigation,
+  .about-me {
+    margin-bottom: 30px;
+  }
+  
+  ul {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  
+  /* Media Query for Responsive Design */
+  
+  /* @media (max-width: 768px) {
+    .navigation {
+      display: none;
+    }
+  }
+  
+  @media (min-width: 769px) {
+    .instructions,
+    .features,
+    .about-me {
+      width: 50%;
+      float: left;
+    }
+  
+    .navigation {
+      width: 25%;
+      float: left;
+      display: block;
+    }
+  }
+   */

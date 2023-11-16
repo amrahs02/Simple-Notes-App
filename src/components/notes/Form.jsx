@@ -1,139 +1,19 @@
-// import { useState, useRef, useContext } from "react";
 
-// import { Box, TextField, ClickAwayListener } from "@mui/material";
-// import { styled } from "@mui/material/styles";
-// import { v4 as uuid } from "uuid";
-
-// import { DataContext } from "../../context/DataProvider";
-
-// const Container = styled(Box)`
-//   display: flex;
-//   flex-direction: column;
-//   margin: auto;
-//   box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 15%);
-//   border-color: #e0e0e0;
-//   width: 600px;
-//   border-radius: 8px;
-//   min-height: 30px;
-//   padding: 10px 15px;
-// `;
-
-// const note = {
-//   id: "",
-//   heading: "",
-//   text: "",
-// };
-
-// const Form = () => {
-//   const [showTextField, setShowTextField] = useState(false);
-//   const [addNote, setAddNote] = useState({ ...note, id: uuid() });
-
-//   const { setNotes } = useContext(DataContext);
-
-//   const containerRef = useRef();
-
-//   const handleClickAway = () => {
-//     setShowTextField(false);
-//     containerRef.current.style.minHeight = "30px";
-//     setAddNote({ ...note, id: uuid() });
-
-//     if (addNote.heading || addNote.text) {
-//       setNotes((prevArr) => [addNote, ...prevArr]);
-//     }
-//   };
-
-//   const onTextAreaClick = () => {
-//     setShowTextField(true);
-//     containerRef.current.style.minHeight = "70px";
-//   };
-
-//   const onTextChange = (e) => {
-//     let changedNote = { ...addNote, [e.target.name]: e.target.value };
-//     setAddNote(changedNote);
-//   };
-
-//   return (
-//     <ClickAwayListener onClickAway={handleClickAway}>
-//       <Container ref={containerRef}>
-//         {showTextField && (
-//           <TextField
-//             placeholder="Title"
-//             variant="standard"
-//             InputProps={{ disableUnderline: true }}
-//             style={{ marginBottom: 10 }}
-//             onChange={(e) => onTextChange(e)}
-//             name="heading"
-//             value={addNote.heading}
-//           />
-//         )}
-//         <TextField
-//           placeholder="Take a note..."
-//           multiline
-//           maxRows={Infinity}
-//           variant="standard"
-//           InputProps={{ disableUnderline: true }}
-//           onClick={onTextAreaClick}
-//           onChange={(e) => onTextChange(e)}
-//           name="text"
-//           value={addNote.text}
-//         />
-//       </Container>
-//     </ClickAwayListener>
-//   );
-// };
-
-// export default Form;
-
-
-import { useState, useRef, useContext } from "react";
-import { Box, TextField, ClickAwayListener, Button } from "@mui/material";
+import { useState, useRef, useContext, useEffect } from "react";
+import { Box, TextField, ClickAwayListener, Button, Snackbar, Alert } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { v4 as uuid } from "uuid";
 import { DataContext } from "../../context/DataProvider";
-import {
-  Undo as UndoIcon,
-  Redo as RedoIcon,
-  Delete as DeleteIcon,
-  Refresh as RefreshIcon,
-} from "@mui/icons-material";
+import { Delete, Redo, Save, Undo } from "@mui/icons-material";
 
-// const style1 = {
-//   width: "30px",
-//   borderRadius: "10px",
-//   color: "grey",
-//   backgroundColor: "#F5F5DC",
-//   margin: "2px",
-// };
-const style1 = {
-  width: "30px",
-  borderRadius: "10px",
-  color: "grey",
-  backgroundColor: "#F5F5DC",
-  margin: "2px",
-};
-
-// Add a media query to change width to 10px when in mobile view
-if (window.matchMedia("(max-width: 768px)").matches) {
-  style1.backgroundColor = "#2196f3";
-  style1.color = "white";
-  style1.borderRadius = "100px";
-  style1.margin = "8px";
-}
 
 const Container = styled(Box)`
-  display: flex;
-  flex-direction: column;
-  margin: auto;
-  box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 15%);
-  border-color: #e0e0e0;
-  width: 50%;
-  border-radius: 8px;
-  min-height: 30px;
-  padding: 10px 15px;
-
-  @media (max-width: 768px) {
-    width: 90%;
-  }
+display: flex;
+flex-direction: column;
+margin: auto;
+border-radius: 100px;
+background-color: #37474f;
+padding: 5px 5px;
 `;
 
 const note = {
@@ -143,28 +23,46 @@ const note = {
 };
 
 const Form = () => {
+  const [historyPointer, setHistoryPointer] = useState(0);
   const [showTextField, setShowTextField] = useState(false);
   const [addNote, setAddNote] = useState({ ...note, id: uuid() });
-
   const [history, setHistory] = useState([addNote]);
-  const [historyPointer, setHistoryPointer] = useState(0);
 
-  const { setNotes } = useContext(DataContext);
+  const { notes, setNotes } = useContext(DataContext);
   const containerRef = useRef();
+
+  useEffect(() => {
+    const storedNotes = JSON.parse(localStorage.getItem("notes")) || [];
+    setNotes(storedNotes);
+  }, [setNotes]);
+
+  const saveToLocalStorage = (newNotes) => {
+    localStorage.setItem("notes", JSON.stringify(newNotes));
+  };
 
   const handleClickAway = () => {
     setShowTextField(false);
     containerRef.current.style.minHeight = "30px";
+    containerRef.current.style.borderRadius = "30px";
     setAddNote({ ...note, id: uuid() });
 
     if (addNote.heading || addNote.text) {
-      setHistory(history.slice(0, historyPointer + 1));
-      setHistoryPointer(historyPointer + 1);
-      setHistory((prevHistory) => [...prevHistory, addNote]);
-      setNotes((prevArr) => [addNote, ...prevArr]);
+      const updatedNotes = [addNote, ...notes];
+      setNotes(updatedNotes);
+      saveToLocalStorage(updatedNotes);
     }
   };
 
+  const onTextAreaClick = () => {
+    setShowTextField(true);
+    containerRef.current.style.minHeight = "70px";
+    containerRef.current.style.borderRadius = "10px";
+  };
+
+  const onTextChange = (e) => {
+    let changedNote = { ...addNote, [e.target.name]: e.target.value };
+    setAddNote(changedNote);
+  };
   const handleSave = () => {
     setShowTextField(false);
     containerRef.current.style.minHeight = "30px";
@@ -177,27 +75,6 @@ const Form = () => {
       setNotes((prevArr) => [addNote, ...prevArr]);
     }
   };
-  const handleCancel = () => {
-    setShowTextField(false);
-    containerRef.current.style.minHeight = "30px";
-    setAddNote({ ...note, id: uuid() });
-  };
-
-  const onTextAreaClick = () => {
-    setShowTextField(true);
-    containerRef.current.style.minHeight = "70px";
-  };
-
-  const onTextChange = (e) => {
-    let changedNote = { ...addNote, [e.target.name]: e.target.value };
-    setAddNote(changedNote);
-    setHistory((prevHistory) => [
-      ...prevHistory.slice(0, historyPointer + 1),
-      changedNote,
-    ]);
-    setHistoryPointer(historyPointer + 1);
-  };
-
   const handleUndo = () => {
     if (historyPointer > 0) {
       setHistoryPointer(historyPointer - 1);
@@ -218,27 +95,38 @@ const Form = () => {
     setHistoryPointer(0);
   };
 
-  const handleRefresh = () => {
-    setAddNote({ ...note });
+
+  const [open, setOpen] = useState(false);
+
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen(false);
   };
+
+
 
   return (
     <ClickAwayListener onClickAway={handleClickAway}>
       <Container ref={containerRef}>
         {showTextField && (
           <TextField
-            placeholder="Title"
-            variant="standard"
+            variant="outlined"
             InputProps={{ disableUnderline: true }}
-            style={{ marginBottom: 10 }}
+            className="textfield1"
             onChange={(e) => onTextChange(e)}
             name="heading"
+            label="Title"
             value={addNote.heading}
           />
         )}
         <TextField
           placeholder="Take a note..."
           multiline
+          defaultValue="foo"
+          className="textfield2"
           maxRows={Infinity}
           variant="standard"
           InputProps={{ disableUnderline: true }}
@@ -248,27 +136,27 @@ const Form = () => {
           value={addNote.text}
         />
         {showTextField && (
-          <Box>
-            <Button style={style1} onClick={handleUndo}>
-              <UndoIcon />
+          <Box className='function-buttons' >
+            <Button onClick={handleUndo} variant="contained" >
+              <Undo />
             </Button>
-            <Button style={style1} onClick={handleRedo}>
-              <RedoIcon />
+            <Button onClick={handleRedo} variant="contained">
+              <Redo />
             </Button>
-            <Button style={style1} onClick={handleDelete}>
-              <DeleteIcon />
+            <Button variant="contained" color="error" onClick={handleDelete}>
+              <Delete />
             </Button>
-            <Button style={style1} onClick={handleRefresh}>
-              <RefreshIcon />
-            </Button>
-            <Button style={style1} onClick={handleSave}>
-              Save
-            </Button>
-            <Button style={style1} onClick={handleCancel}>
-              Close
+            <Button variant="contained" color="success" onClick={handleSave}>
+              <Save />
             </Button>
           </Box>
+
         )}
+        <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+          <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+            This is a success message!
+          </Alert>
+        </Snackbar>
       </Container>
     </ClickAwayListener>
   );

@@ -1,30 +1,18 @@
+// EmptyNotes.js
 
-import ArchiveOutlinedIcon from '@mui/icons-material/ArchiveOutlined';
-import { Typography, Box, styled } from '@mui/material';
+import React from 'react';
+import Archive from '@mui/icons-material/Archive';
+import { Typography, Box } from '@mui/material';
+import "../global.css"; // Import the global styles
 
-const Light = styled(ArchiveOutlinedIcon)`
-    font-size: 120px;
-    color: #F5F5F5;
-`
 
-const Text = styled(Typography)`
-    color: #80868b;
-    font-size: 22px
-`
-
-const Container = styled(Box)`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20vh
-`
 
 const EmptyNotes = () => {
     return (
-        <Container>
-            <Light />
-            <Text>Your Archive Notes appear here</Text>
-        </Container>
+        <Box className="empty-notes-container">
+            <Archive className="empty-notes-light" />
+            <Typography className="empty-notes-text">Your Archive Notes appear here</Typography>
+        </Box>
     )
 }
 

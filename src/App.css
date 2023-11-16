@@ -1,4 +1,8 @@
+/* #root{
+  background-color: #282c34;
+}
 .App {
+  background-color: 'black';
   text-align: center;
 }
 
@@ -21,7 +25,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: green;
 }
 
 .App-link {
@@ -35,4 +39,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */

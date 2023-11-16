@@ -1,23 +1,13 @@
-import { useContext } from "react";
-import { Card, CardContent, CardActions, Typography } from "@mui/material";
-import { styled } from "@mui/material/styles";
+// Archive.js
+import React, { useContext } from "react";
+import { CardContent, CardActions, Typography, Box } from "@mui/material";
 import { DataContext } from "../../context/DataProvider";
-import {
-  UnarchiveOutlined as Unarchive,
-  DeleteOutlineOutlined as Delete,
-} from "@mui/icons-material";
+import { Unarchive, Delete } from "@mui/icons-material";
+import "../global.css"; // Import the global styles
 
 
-const StyledCard = styled(Card)`
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  width: 240px;
-  margin: 8px;
-  box-shadow: none;
-`;
 
 const Archive = ({ archive }) => {
-
   const { archiveNotes, setNotes, setArchiveNotes, setDeleteNotes } = useContext(DataContext);
 
   const unArchiveNote = (archive) => {
@@ -33,16 +23,16 @@ const Archive = ({ archive }) => {
   };
 
   return (
-    <StyledCard>
+    <Box className="custom-card"> {/* Apply the global class */}
       <CardContent>
         <Typography>{archive.heading}</Typography>
         <Typography>{archive.text}</Typography>
       </CardContent>
       <CardActions>
-        <Unarchive fontSize="small" style={{ marginLeft: "auto" }} onClick={() => unArchiveNote(archive)}/>
+        <Unarchive fontSize="small" className="unarchive-icon" onClick={() => unArchiveNote(archive)} />
         <Delete fontSize="small" onClick={() => deleteNote(archive)} />
       </CardActions>
-    </StyledCard>
+    </Box>
   );
 };
 

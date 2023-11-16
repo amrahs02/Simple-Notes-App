@@ -1,36 +1,17 @@
-import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
-import { Typography, Box, styled } from "@mui/material";
-import HeaderBar from "../HeaderBar";
+// EmptyNotes.js
 
-const Light = styled(DeleteOutlineOutlinedIcon)`
-  font-size: 120px;
-  color: #f5f5f5;
-`;
+import React from "react";
+import Delete from "@mui/icons-material/Delete";
+import { Typography, Box} from "@mui/material";
+import "../global.css"; // Import the global styles
 
-const Text = styled(Typography)`
-  color: #80868b;
-  font-size: 22px;
-`;
-
-const Container = styled(Box)`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 20vh;
-`;
 
 const EmptyNotes = () => {
   return (
-    <>
-      <h4 style={{ textAlign: "center", fontStyle: "italic" }}>
-        Notes in Trash are deleted after 7 days.
-      </h4>
-      <Container>
-        <Light />
-        <HeaderBar />
-        <Text>No notes in Trash</Text>
-      </Container>
-    </>
+      <Box className="empty-notes-container">
+        <Delete className="empty-notes-light" />
+        <Typography className="empty-notes-text">No notes in Trash</Typography>
+    </Box>
   );
 };
 
