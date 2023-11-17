@@ -33,31 +33,50 @@ export default function FixedBottomNavigation() {
 
   return (
     <Box sx={{ pb: 7 }}>
-      <Paper sx={{ position: 'fixed', backgroundColor: '#111424', bottom: 0, left: 0, right: 0, }} elevation={3}>
-        <BottomNavigation sx={{ margin: '10px', backgroundColor: '#111424' }} showLabels value={value} onChange={handleChange}>
+      <Paper sx={{
+        position: 'fixed',
+        backgroundColor: '#111424',
+        bottom: 0,
+        left: 0,
+        right: 0,
+      }} elevation={3}>
+        <BottomNavigation sx={{
+          margin: '10px',
+          backgroundColor: '#111424'
+        }} showLabels
+          value={value}
+          onChange={handleChange}>
           <BottomNavigationAction
             label="Notes"
             style={ButNavActStyle1}
-            icon={<Link to="/" style={{ color: 'white' }}>
+            icon={<Link to="/"
+              style={{ color: 'white' }}>
               <div style={ButNavActStyle}><Edit /></div>
             </Link>}
           />
           <BottomNavigationAction
             label="Archive" style={ButNavActStyle1}
-            icon={<Link to="/archive" style={{ color: 'white' }}>
-              <div style={ButNavActStyle}><Archive /></div>
+            icon={<Link to="/archive"
+              style={{ color: 'white' }}>
+              <div
+                style={ButNavActStyle}><Archive /></div>
             </Link>}
           />
           <BottomNavigationAction
-            label="Delete" style={ButNavActStyle1}
-            icon={<Link to="/delete" style={{ color: 'white' }}>
+            label="Delete"
+            style={ButNavActStyle1}
+            icon={<Link to="/delete"
+              style={{ color: 'white' }}>
               <div style={ButNavActStyle}><Delete /></div>
             </Link>}
           />
           <BottomNavigationAction
-            label="You" style={ButNavActStyle1}
-            icon={<Link to="/you" style={{ color: 'white' }}>
-              <div style={ButNavActStyle}><Person2 /></div>
+            label="You"
+            style={ButNavActStyle1}
+            icon={<Link to="/you"
+              style={{ color: 'white' }}>
+              <div
+                style={ButNavActStyle}><Person2 /></div>
             </Link>}
           />
         </BottomNavigation>

@@ -25,7 +25,11 @@ export default function SwipeableTemporaryDrawer() {
         <React.Fragment key={anchor}>
           <Button >
             <MenuIcon
-              style={{ color: 'white', zIndex: '100000', margin: '15px' }}
+              style={{
+                color: 'white',
+                zIndex: '100000',
+                margin: '15px'
+              }}
               onClick={toggleDrawer('left', !state.left)}
             >
               {anchor}

@@ -1,49 +1,86 @@
 import React from 'react';
-import './You.css'
+import { Link } from 'react-router-dom';
+import './You.css'; // Import your CSS file
 
 const You = () => {
   return (
-    <div className="container">
-      <div className="header">
-        <h1>Your Notes App</h1>
-        <p>Welcome to your notes app, Designed and Developed by Sandeep Sharma.</p>
-      </div>
+    <div className="you-container">
+      <header className="header">
+        <h1>Welcome</h1>
+      </header>
 
-      <div className="instructions">
-        <h2>Instructions</h2>
-        <p>Use the bottom navigation to navigate through the app.</p>
-      </div>
 
-      <div className="features">
-        <h2>Features</h2>
+      <section class="libraries-section">
+        <h2>Features of My Notes App:</h2>
         <ul>
-          <li>Undo: Easily revert changes with the undo feature.</li>
-          <li>Redo: Reinstate changes that were undone with the redo feature.</li>
-          <li>Save: Ensure your notes are safe and up-to-date by using the save feature.</li>
-          <li>Local Storage: Your notes are automatically saved to local storage for seamless access.</li>
-          <li>Drag and Drop: Organize your notes effortlessly by using the drag-and-drop functionality.</li>
+          <li>Different navigation systems for various screen sizes</li>
+          <li>Beautiful bottom navigation for mobile and sidebar for desktop</li>
+          <li>Elegant design crafted with attention to detail</li>
+          <li>Utilizes React Router DOM for seamless navigation</li>
+          <li>Integration of Material UI for ready-made components and icons</li>
+          <li>Four main routes: Archives, Trash, You, and Note</li>
+          <li>Deleted notes are moved to the trash section</li>
+          <li>Archived notes can be unarchived and restored</li>
+          {/* <li>Efficient search functionality to find notes quickly</li> */}
+          <li>Customizable note categories for better organization</li>
+          {/* <li>Option to add and edit notes with a rich text editor</li> */}
+          <li>Responsive design for a seamless experience on any device</li>
+          {/* <li>Dark mode for reduced eye strain during nighttime use</li> */}
         </ul>
-      </div>
+      </section>
+      <section class="libraries-section">
+        <h2>Libraries and Dependencies Used:</h2>
+        <ul>
+          <li>React - JavaScript library for building user interfaces</li>
+          <li>React Router DOM - Declarative routing for React.js</li>
+          <li>Material UI - React components that implement Google's Material Design</li>
+          <li>Emotion - CSS-in-JS library for styling components</li>
+          {/* <li>Firebase - Cloud services for web and mobile apps</li> */}
+          <li>React Beautiful DND - Beautiful and accessible drag-and-drop for lists with React</li>
+          <li>UUID - Generates unique IDs</li>
+          {/* <li>Web Vitals - Library for measuring web performance</li> */}
+        </ul>
+      </section>
 
-      <div className="navigation">
-        <h2>Navigation</h2>
+      <section className="instructions-section">
+        <h2>Instructions:</h2>
         <p>
-          Mobile View: Utilize the bottom navigation for easy access on your mobile device.
-          Desktop View: Navigate through the app using the sidebar on your desktop.
+          Use the bottom navigation to explore different sections of the app.
+          {/* Easily search for notes, */}
+           add new notes, and organize them by
+          category. Enjoy a comfortable reading experience.
+          {/* with the option to */}
+          {/* switch to dark mode. */}
         </p>
-      </div>
+      </section>
 
-      <div className="about-me">
-        <h2>About Me</h2>
+      <section className="about-me-section">
+        <h2>About Me:</h2>
         <p>
-          Hi there! This is Sandeep Sharma. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Vero, eligendi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores ipsum
-          reprehenderit quasi exercitationem praesentium nostrum eius consequuntur tempore recusandae,
-          iusto, minima, natus accusamus dolores aliquid illo maxime vel totam. Laboriosam recusandae
-          consectetur repellat possimus ad molestiae voluptas magni, debitis ipsum neque perferendis
-          vel enim inventore sed, dolore eum est repellendus.
+          Hi there, I'm Sandeep Sharma, a passionate developer dedicated to
+          creating elegant and user-friendly applications. I designed this notes
+          app to enhance your productivity and provide a delightful user
+          experience.
         </p>
-      </div>
+      </section>
+
+      {/* <nav className="navigation-links">
+        <h2>Navigation Links:</h2>
+        <ul>
+          <li>
+            <Link to="/archive">Archives</Link>
+          </li>
+          <li>
+            <Link to="/delete">Trash</Link>
+          </li>
+          <li>
+            <Link to="/you">You</Link>
+          </li>
+          <li>
+            <Link to="/">Note</Link>
+          </li>
+        </ul>
+      </nav> */}
     </div>
   );
 };

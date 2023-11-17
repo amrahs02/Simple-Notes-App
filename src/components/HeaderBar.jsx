@@ -5,7 +5,7 @@ import { useLocation } from "react-router-dom";
 
 const Header = styled(AppBar)`
   z-index: 1201;
-  height: 70px;
+  height: 60px;
 `;
 
 const Heading = styled(Typography)`

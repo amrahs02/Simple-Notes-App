@@ -13,7 +13,7 @@ flex-direction: column;
 margin: auto;
 border-radius: 100px;
 background-color: #37474f;
-padding: 5px 5px;
+padding: 8px 8px;
 `;
 
 const note = {
@@ -113,8 +113,11 @@ const Form = () => {
       <Container ref={containerRef}>
         {showTextField && (
           <TextField
-            variant="outlined"
-            InputProps={{ disableUnderline: true }}
+            variant="standard"
+            InputProps={{
+              disableUnderline: true,
+              style: { color: 'white'  }, // Change text color to white
+            }}
             className="textfield1"
             onChange={(e) => onTextChange(e)}
             name="heading"
@@ -129,12 +132,16 @@ const Form = () => {
           className="textfield2"
           maxRows={Infinity}
           variant="standard"
-          InputProps={{ disableUnderline: true }}
+          InputProps={{
+            disableUnderline: true,
+            style: { color: 'white' }, // Change text color to white
+          }}
           onClick={onTextAreaClick}
           onChange={(e) => onTextChange(e)}
           name="text"
           value={addNote.text}
         />
+
         {showTextField && (
           <Box className='function-buttons' >
             <Button onClick={handleUndo} variant="contained" >

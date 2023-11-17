@@ -1,5 +1,5 @@
 import { List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
-import { Archive, Delete , Notes, Person2 } from '@mui/icons-material';
+import { Archive, Delete, Notes, Person2 } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
 
 const NavList = () => {
@@ -32,7 +32,7 @@ const NavList = () => {
     height: '100%'
   }
   const ListItemTextStyle = {
-    
+
   }
 
 
@@ -41,7 +41,10 @@ const NavList = () => {
       navList.map(list => (
         <ListItem key={list.id} style={ListItemStyle}>
           <Link to={`${list.route}`} style={LinkStyle}>
-            <ListItemIcon style={{ alignItems: 'center', color: 'white' }}>
+            <ListItemIcon style={{
+              alignItems: 'center',
+              color: 'white'
+            }}>
               {list.icon}
             </ListItemIcon>
             <ListItemText style={ListItemTextStyle} primary={list.name} />

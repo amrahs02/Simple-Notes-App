@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Box, useMediaQuery} from "@mui/material";
+import { Box, useMediaQuery } from "@mui/material";
 import BottomNav from './BottomNav';
 import HeaderBar from "./HeaderBar";
 import SwipeDrawer from "./SwipeDrawer";
@@ -12,7 +12,11 @@ const Home = () => {
   const isMobile = useMediaQuery('(max-width:750px)');
 
   return (
-    <Box style={{ display: "flex", width: "100%", backgroundColor: '#263238' }}>
+    <Box style={{
+      display: "flex",
+      width: "100%",
+      backgroundColor: '#263238'
+    }}>
       <Router>
         <HeaderBar />
         {isMobile ? <BottomNav /> : <SwipeDrawer />}
