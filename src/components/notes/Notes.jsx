@@ -1,77 +1,28 @@
-import { useContext, useEffect } from "react";
-import { Box, Grid } from "@mui/material";
-import { styled } from "@mui/material/styles";
-import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
+import React, { useContext } from "react";
+import { Box } from "@mui/material";
 import { DataContext } from "../../context/DataProvider";
-import { reorder } from "../../utils/common-utils";
 import Form from "./Form";
 import Note from "./Note";
 import EmptyNotes from "./EmptyNotes";
 
-const DrawerHeader = styled("div")(({ theme }) => ({
-  ...theme.mixins.toolbar,
-}));
-
 const Notes = () => {
-  const { notes, setNotes } = useContext(DataContext);
-
-  useEffect(() => {
-    // Load notes from localStorage when the component mounts
-    const storedNotes = JSON.parse(localStorage.getItem("notes")) || [];
-    setNotes(storedNotes);
-  }, [setNotes]);
-
-  const onDragEnd = (result) => {
-    if (!result.destination) return;
-
-    const items = reorder(notes, result.source.index, result.destination.index);
-    setNotes(items);
-    // Save reordered notes to localStorage
-    localStorage.setItem("notes", JSON.stringify(items));
-  };
+  const { notes } = useContext(DataContext);
 
   return (
-    <Box sx={{ display: "flex", width: "100%" , height: '350vw' }}>
-      <Box sx={{ padding: '50px 50px 50px 50px ', width: "100%" }}>
-        <DrawerHeader />
-        <Form />
-        {notes.length > 0 ? (
-          <DragDropContext onDragEnd={onDragEnd}>
-            <Droppable droppableId="droppable">
-              {(provided, snapshot) => (
-                <Grid
-                  container
-                  style={{ width: '100%', marginTop: '50px' }}
-                  {...provided.droppableProps}
-                  ref={provided.innerRef}
-                >
-                  {notes.map((note, index) => (
-                    <Draggable
-                      key={note.id}
-                      draggableId={note.id}
-                      index={index}
-                    >
-                      {(provided, snapshot) => (
-                        <Grid
-                          sx={{ margin: '10px auto' }}
-                          ref={provided.innerRef}
-                          {...provided.draggableProps}
-                          {...provided.dragHandleProps}
-                          item
-                        >
-                          <Note note={note} />
-                        </Grid>
-                      )}
-                    </Draggable>
-                  ))}
-                </Grid>
-              )}
-            </Droppable>
-          </DragDropContext>
-        ) : (
-          <EmptyNotes />
-        )}
-      </Box>
+    <Box className="sm:w-1/2 border w-full border-gray-700 rounded-xl m-2">
+      <h2 className="text-xl font-bold text-blue-500 text-center  m-4" >Notes</h2>
+      <Form />
+      {notes.length > 0 ? (
+        <div className="m-2 w-fit flex flex-row flex-wrap justify-center items-center">
+          {notes.map((note) => (
+            <div key={note.id} className="m-2 w-fit">
+              <Note note={note} />
+            </div>
+          ))}
+        </div>
+      ) : (
+        <EmptyNotes />
+      )}
     </Box>
   );
 };

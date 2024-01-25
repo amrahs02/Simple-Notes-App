@@ -1,42 +1,11 @@
-/* #root{
-  background-color: #282c34;
-}
-.App {
-  background-color: 'black';
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Add this CSS to your Tailwind CSS file or style block */
+@keyframes glowing {
+    0% { box-shadow: 0 0 5px rgba(255, 0, 0, 0.7); }
+    50% { box-shadow: 0 0 20px rgba(255, 0, 0, 0.9); }
+    100% { box-shadow: 0 0 5px rgba(255, 0, 0, 0.7); }
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: green;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  
+  .glow {
+    animation: glowing 1500ms infinite;
   }
-  to {
-    transform: rotate(360deg);
-  }
-} */
+  
