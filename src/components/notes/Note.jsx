@@ -48,12 +48,12 @@ const Note = ({ note, showDelete = true, onToggleFavorite }) => {
   };
 
   return (
-    <div className="rounded-lg flex w-52 justify-center items-center bg-gray-800 border border-gray-700 text-gray-300">
+    <div className="rounded-lg flex justify-center items-center bg-gray-800 border border-gray-700 text-gray-300 m-2">
       <CardContent>
         <Typography className="font-bold text-blue-500 capitalize">{note.heading}</Typography>
         <Typography>{note.text}</Typography>
       </CardContent>
-      <CardActions className="p-4 m-4">
+      <CardActions className="p-4  m-4">
         <Favorite
           className={`cursor-pointer ml-2 ${note.isFavorite ? "text-green-500" : "text-gray-500"}`}
           fontSize="small"
