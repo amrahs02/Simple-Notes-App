@@ -48,21 +48,21 @@ const Note = ({ note, showDelete = true, onToggleFavorite }) => {
   };
 
   return (
-    <div className="rounded-lg flex justify-center items-center bg-gray-800 border border-gray-700 text-gray-300 m-2">
-      <CardContent>
+    <div className="rounded-lg flex justify-between items-center bg-gray-800 border border-gray-700 text-gray-300 m-2">
+      <div className="ml-4" >
         <Typography className="font-bold text-blue-500 capitalize">{note.heading}</Typography>
-        <Typography>{note.text}</Typography>
-      </CardContent>
-      <CardActions className="p-4  m-4">
+        <Typography className="" >{note.text}</Typography>
+      </div>
+      <CardActions className="m-4 ">
         <Favorite
-          className={`cursor-pointer ml-2 ${note.isFavorite ? "text-green-500" : "text-gray-500"}`}
-          fontSize="small"
+          className={`cursor-pointer ml-2 border-gray-700 border rounded-xl  ${note.isFavorite ? "text-green-500" : "text-gray-500"}`}
+          fontSize="large"
           onClick={() => toggleFavorite(note)}
         />
         {showDelete && (
           <Delete
-            className="cursor-pointer ml-2"
-            fontSize="small"
+            className="cursor-pointer ml-2 border-gray-700 border rounded-xl text-gray-500 "
+            fontSize="large"
             onClick={() => deleteNote(note)}
           />
         )}

@@ -27,7 +27,7 @@ const Favourites = () => {
         </div>
       ) : (
         <div className="flex flex-col items-center justify-center">
-      <Favorite className="text-4xl text-center text-gray-500" />
+      <Favorite fontSize="medium" className="text-2xl text-center text-gray-500" />
       <p className="text-gray-500 mb-2">No favourites yet</p>
     </div>
       )}

@@ -9,11 +9,11 @@ const Notes = () => {
   const { notes } = useContext(DataContext);
 
   return (
-    <Box className="sm:w-1/2 border w-full border-gray-700 rounded-xl">
-      <h2 className="text-xl font-bold text-blue-500 text-center   m-4" >Notes</h2>
+    <Box className="sm:w-1/2 border w-full min-h-96 border-gray-700 rounded-xl">
+      <h2 className="text-xl font-bold text-blue-500 text-center m-4" >Notes</h2>
       <Form />
       {notes.length > 0 ? (
-        <div className=" w-full">
+        <div className="w-full">
           {notes.map((note) => (
             <div key={note.id} className="">
               <Note note={note} />

@@ -1,5 +1,5 @@
 import { Delete, FavoriteRounded, Notes, Person2 } from '@mui/icons-material';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const NavList = ({ title }) => {
   const navList = [
@@ -11,6 +11,7 @@ const NavList = ({ title }) => {
 
 
   return (
+    
     <div className="border border-gray-700 bg-dark-gray m-2 p-4 flex flex-row items-center justify-between rounded-xl sm:w-1/2">
       <h2 className="text-xl font-bold hover:text-gray-300 hover:underline">Your Personal Notes</h2>
       <div className="flex">
@@ -21,6 +22,7 @@ const NavList = ({ title }) => {
         ))}
       </div>
     </div>
+    
   );
 };
 
