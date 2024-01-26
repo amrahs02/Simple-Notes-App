@@ -6,8 +6,8 @@ const EmptyNotes = () => {
     <div className="flex flex-col items-center justify-center">
       <Lightbulb className="text-4xl text-center w-full text-gray-500" />
       <p className="text-gray-500">Notes you add appear here</p>
-      <p className="text-gray-500 mb-2">Click away from textfield to 
-        <span className="text-green-300"> save</span> note or simply <span className="text-green-300">press enter</span> 
+      <p className="text-gray-500 text-sm text-center mb-2">Click away from textfield
+        or press enter to save notes
       </p>
     </div>
   );

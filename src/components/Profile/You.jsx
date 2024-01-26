@@ -2,7 +2,7 @@ import React from 'react';
 
 const You = () => {
   return (
-    <div className=" border border-gray-700 sm:w-1/2 rounded-xl text-gray-400 bg-dark-gray  ">
+    <div className=" border border-gray-700 sm:w-1/2 rounded-xl mb-40  text-gray-400 bg-dark-gray  ">
       <header className="header text-center mb-4">
       <h2 className="text-xl font-bold text-blue-500 text-center  m-4" >You</h2>
       </header> 

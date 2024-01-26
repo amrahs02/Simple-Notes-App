@@ -9,7 +9,7 @@ const Notes = () => {
   const { notes } = useContext(DataContext);
 
   return (
-    <Box className="sm:w-1/2 border w-full min-h-96 overflow-y-auto border-gray-700 rounded-xl">
+    <Box className="sm:w-1/2 border w-full mb-16 sm:min-h-96  overflow-y-auto border-gray-700 rounded-xl">
       <h2 className="text-xl font-bold text-blue-500 text-center m-4" >Notes</h2>
       <Form />
       {notes.length > 0 ? (
