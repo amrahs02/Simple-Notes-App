@@ -2,14 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Add this CSS to your Tailwind CSS file or style block */
-@keyframes glowing {
-    0% { box-shadow: 0 0 5px rgba(255, 0, 0, 0.7); }
-    50% { box-shadow: 0 0 20px rgba(255, 0, 0, 0.9); }
-    100% { box-shadow: 0 0 5px rgba(255, 0, 0, 0.7); }
+::-webkit-scrollbar {
+    width: 5px;
   }
   
-  .glow {
-    animation: glowing 1500ms infinite;
+  ::-webkit-scrollbar-thumb {
+    background-color: rgb(60, 63, 73); /* Set your desired color here */
+    border-radius: 10px;
   }
-  
