@@ -39,7 +39,16 @@ const Form = () => {
   };
 
 
+  const onEnterPress = (e) => {
+    if (e.key === 'Enter') {
+      handleClickAway();
+    } else if (e.key === '/') {
+      // Focus on the text field when "/" key is pressed
+      containerRef.current.querySelector('.textfield2').focus();
+    }
+  };
 
+  
 
 
 
@@ -55,10 +64,12 @@ const Form = () => {
               style: { color: 'white' },
             }}
             onChange={(e) => onTextChange(e)}
+            onKeyPress={onEnterPress}
             name="heading"
             placeholder="Title"
             value={addNote.heading}
           />
+
         )}
         <TextField
           className="textfield2"
@@ -73,6 +84,7 @@ const Form = () => {
           }}
           onClick={onTextAreaClick}
           onChange={(e) => onTextChange(e)}
+          onKeyPress={onEnterPress}
           name="text"
           value={addNote.text}
         />
