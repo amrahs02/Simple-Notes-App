@@ -13,8 +13,8 @@ export default function Switcher() {
 
   return (
     <>
-      <div className='text-gray-700!' >
-        <DarkModeSwitch checked={darkSide} onChange={toggleDarkMode} size={30} />
+      <div className='text-gray-700! ' >
+        <DarkModeSwitch checked={darkSide} onChange={toggleDarkMode} size={25} />
       </div>
     </>
   );
