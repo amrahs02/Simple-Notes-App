@@ -20,7 +20,7 @@ const Home = () => {
       <Router>
         {isMobile ? <BottomNav /> : <NavList />}
         <div className=" border border-gray-700 w-full rounded-xl p-2 flex justify-between items-center sm:hidden" >
-          <p className="text-gray-400 dark:text-gray-700 text-md " >Your Personal Notes</p>
+          <p className="text-gray-400 dark:text-gray-700 text-lg font-bold " >Your Personal Notes</p>
           {isMobile ? <Switcher /> : <Switcher />}
         </div>
 
