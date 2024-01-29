@@ -13,8 +13,8 @@ const NavList = ({ title }) => {
 
   return (
 
-    <div className="border dark:bg-gray-100 dark:text-gray-700 border-gray-700 bg-dark-gray m-2 p-4 flex flex-row items-center justify-between rounded-xl sm:w-1/2">
-      <h2 className="text-xl flex flex-row font-bold dark:hover:text-gray-700 hover:text-gray-300 hover:underline">Your Personal Notes
+    <div className="border dark:bg-gray-100 dark:text-gray-700 border-gray-700 bg-dark-gray m-2 p-4 flex flex-row items-center justify-between rounded-xl sm:w-3/5">
+      <h2 className="text-xl flex flex-row font-bold text-blue-500  dark:hover:text-gray-700 hover:text-pink-600 hover:underline">Your Personal Notes
         <div className="text-gray-200 ml-4 rounded-full  dark:text-gray-700">
           <Switcher />
         </div>

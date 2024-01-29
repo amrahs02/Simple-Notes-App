@@ -15,12 +15,12 @@ const Home = () => {
   const isMobile = useMediaQuery("(max-width:750px)");
 
   return (
-    <Box className="dark:bg-gray-100 dark:text-gray-200 bg-dark-gray h-screen p-2 text-gray-200 flex border border-gray-700 items-center flex-col">
+    <Box className="dark:bg-gray-100 h-screen dark:text-gray-200 bg-dark-gray p-1 text-gray-200 flex border border-gray-700 items-center flex-col">
 
       <Router>
         {isMobile ? <BottomNav /> : <NavList />}
-        <div className=" border border-gray-700 w-full rounded-xl p-2 flex justify-between items-center sm:hidden" >
-          <p className="text-gray-400 dark:text-gray-700 text-lg font-bold " >Your Personal Notes</p>
+        <div className=" border  border-gray-700 w-full rounded-xl p-2 flex justify-between items-center sm:hidden" >
+          <p className="text-blue-500 dark:hover:text-gray-700 hover:text-pink-600  text-lg font-bold " >Your Personal Notes</p>
           {isMobile ? <Switcher /> : <Switcher />}
         </div>
 

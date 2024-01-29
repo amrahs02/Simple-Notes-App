@@ -1,6 +1,5 @@
 import React from "react";
 import DeleteIcon from "@mui/icons-material/Delete";
-import { Typography, Box } from "@mui/material";
 
 const EmptyNotes = () => {
   return (

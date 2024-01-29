@@ -16,7 +16,7 @@ const Favourites = () => {
   return (
     <>
       <h2 className=" text-xl font-bold text-blue-500 text-center  m-4">Favorites</h2>
-      <div className="dark:bg-gray-100 dark:text-gray-700 sm:w-1/2 border w-full mb-16 border-gray-700 overflow-y-auto rounded-xl ">
+      <div className="dark:bg-gray-100 dark:text-gray-700 sm:w-3/5 border w-full mb-16 border-gray-700 overflow-y-auto rounded-xl ">
         {favoriteNotes.length > 0 ? (
           <div className="">
             {favoriteNotes.map((note) => (
