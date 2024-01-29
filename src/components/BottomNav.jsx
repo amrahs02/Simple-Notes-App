@@ -29,14 +29,14 @@
 
     return (
       <div className="pb-7">
-        <Paper className="fixed bottom-0 left-0 right-0 bg-gray-800" elevation={3}>
-          <BottomNavigation className="m-2 bg-gray-800" showLabels value={value} onChange={handleChange}>
+        <Paper className="dark:bg-gray-100 dark:text-gray-200 fixed bottom-0 left-0 right-0 bg-gray-800" elevation={3}>
+          <BottomNavigation className="m-2 bg-gray-800"  value={value} onChange={handleChange}>
             {navigationItems.map((item, index) => (
               <BottomNavigationAction
                 key={index}
                 label={item.label}
                 className="text-white"
-                icon={<NavigationItem to={item.to} label={item.label} icon={item.icon} />}
+                icon={<NavigationItem to={item.to}  icon={item.icon} />}
               />
             ))}
           </BottomNavigation>

@@ -48,20 +48,20 @@ const Form = () => {
     }
   };
 
-  
+
 
 
 
   return (
     <ClickAwayListener onClickAway={handleClickAway}>
-      <Box className="bg-dark-gray flex flex-col my-10 border border-gray-700 p-4 rounded-xl m-2" ref={containerRef}>
+      <div className="dark:bg-gray-100 dark:text-gray-700  bg-dark-gray flex flex-col my-10 border border-gray-700 p-4 rounded-xl m-2" ref={containerRef}>
         {showTextField && (
           <TextField
-            className="textfield1"
+            className="textfield1 text-gray-800"
             variant="standard"
             InputProps={{
               disableUnderline: true,
-              style: { color: 'white' },
+              style: { color: 'grey' },
             }}
             onChange={(e) => onTextChange(e)}
             onKeyPress={onEnterPress}
@@ -72,7 +72,7 @@ const Form = () => {
 
         )}
         <TextField
-          className="textfield2"
+          className="textfield2 "
           placeholder="Write Your Note Here..."
           variant="standard"
           multiline
@@ -80,7 +80,7 @@ const Form = () => {
           maxRows={Infinity}
           InputProps={{
             disableUnderline: true,
-            style: { color: 'white' },
+            style: { color: 'grey' },
           }}
           onClick={onTextAreaClick}
           onChange={(e) => onTextChange(e)}
@@ -90,7 +90,7 @@ const Form = () => {
         />
 
 
-      </Box>
+      </div>
     </ClickAwayListener>
   );
 };

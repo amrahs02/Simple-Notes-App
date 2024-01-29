@@ -48,7 +48,7 @@ const Note = ({ note, showDelete = true, onToggleFavorite }) => {
   };
 
   return (
-    <div className="rounded-lg flex justify-between items-center bg-gray-800 border border-gray-700 text-gray-300 m-2">
+    <div className=" dark:bg-gray-100 dark:text-gray-700 rounded-lg flex justify-between items-center bg-gray-800 border border-gray-700 text-gray-300 m-2">
       <div className="ml-4" >
         <Typography className="font-bold text-blue-500 capitalize">{note.heading}</Typography>
         <Typography className="" >{note.text}</Typography>
