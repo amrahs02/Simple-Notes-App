@@ -24,8 +24,8 @@ const DeleteNote = ({ deleteNote }) => {
         <Typography className="">{deleteNote.text}</Typography>
       </div>
       <CardActions className="m-4">
-        <Delete className=" ml-2 border-gray-700 border rounded-xl text-gray-500" fontSize="large" onClick={() => removeNote(deleteNote)} />
         <Restore className="cursor-pointer ml-2 border-gray-700 border rounded-xl text-gray-500" fontSize="large" onClick={() => restoreNote(deleteNote)} />
+        <Delete className=" ml-2 border-gray-700 border rounded-xl text-gray-500" fontSize="large" onClick={() => removeNote(deleteNote)} />
       </CardActions>
     </div>
   );
